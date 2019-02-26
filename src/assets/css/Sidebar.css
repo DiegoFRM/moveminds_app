@@ -1,0 +1,19 @@
+aside.left-panel {
+    display: table-cell;
+    height: 100vh;
+    min-height: 100%;
+    padding: 0 25px;
+    vertical-align: top;
+    width: 280px;
+    transition: width 0.3s ease; 
+  }
+  
+  .navbar {
+    background: #62e40c;
+    border-radius: 0;
+    border: none;
+    display: block;
+    margin: 0;
+    margin-bottom: 100px;
+    padding: 0; 
+  }
