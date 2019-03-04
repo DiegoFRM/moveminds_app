@@ -3,6 +3,7 @@
     <auth-layout v-if="isAuth" ></auth-layout>
       <div class="" v-else>
     <Header/>
+    <Login/>
     <InfoUser/>
     <div class="admin-container">
         <MenuNav :navItems="nav"/>
@@ -24,7 +25,7 @@ import Header from './components/Header.vue'
 import MenuNav from './components/MenuNav.vue'
 //import Sidebar from './components/Sidebar.vue'
 import InfoUser from './components/InfoUser.vue'
-
+import Login from './components/Login.vue' //'./pages/login/Login.vue'
 import AuthLayout from './layouts/AuthLayout.vue';
 
 export default {
@@ -37,7 +38,8 @@ export default {
   components: {
     AuthLayout,
     Header,
-    InfoUser, 
+    InfoUser,
+    Login,
     MenuNav
   },
   computed: {
