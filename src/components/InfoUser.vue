@@ -1,19 +1,4 @@
 <template>
-<!--
-<section class="mainContainer">
-        <div class="avatar">
-            <img  class="avatar_img" src="../images/avatar/avatar_movemind.png">                    
-        </div>
-
-     <div id="SectionadvanceUser" class="advanceUser">
-              <div class="chart-download">
-                <canvas id="download-chart2" width="113px" height="113px"></canvas>
-                <span id="gauge-value"> % </span>
-              </div> 
-      </div>          
-
-</section>
- -->
 
         <div class="mainContainer">
             <div  class="main_infouser">
@@ -35,11 +20,18 @@
                     </div>
                     <div class="bg_names_user">
                         <div class="name_infouser">
-                            <span><b>Faustino Chávez Galindo</b> </span><br>
+                        <div class="field_name_infouser">
+                            <span ><b>Faustino Chávez Galindo</b> </span><br>
                             <span>Copy jr.</span>
                         </div>
+
+                        <div class="btnCardUser"><img src="../images/button_red.png"></div>
+
+                        </div>
+                        
                         
                     </div>
+
                     
                     </section>
                     <section id="data-user-section" class="">
@@ -56,12 +48,98 @@
                     </section>
                 </div>
                 
-                    
+             <!-- <div class="cardcoutain"> 
+                  <div class="cardContainer">
+                    <div>  
+                        <span class="redtitle">Tarjeta de usuario:</span>
+                        </div>
+                        <div class="cardinfo">
+                            <div class="cardpart1"> 
+                                <img src="../images/carduser-02.png">
+                                <p>Faustino</p>
+                            </div>
+                            <div> 
+                                <div  class="cardpart2">
+                                    <div class="file1cardInfo">
+                                         <div>name
+                                             <u><p>Faustino Chavez <img src="../images/carduser-04.png"></p></u>
+                                         </div>
+
+                                         <div>ID
+                                             <p>1231423</p>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                  </div>
+              </div> -->     
         </div>
+        
 </template>
 
 
 <style>
+
+.cardpart1 {
+    width: 30%;
+}
+
+.cardpart2 {
+}
+
+.cardpart1 img{
+    width: 100%;
+
+}
+
+.file1cardInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardinfo{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+    .redtitle{
+        color:#FF5361;
+        font-weight: bold;
+    }
+
+    .cardContainer{
+        position:relative;
+        width: 80%;
+        max-width: 600px;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        background-color:#FFF;
+        padding: 1vw;
+    }
+
+    .cardcoutain{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left:0;
+        background-color:rgba(0,0,0,0.5);
+        z-index: 10;
+    }
+
+    .btnCardUser{
+    height: 50px;
+    font-size: 3vw;
+    width: 50px;
+    float: right;
+    position: relative;
+    text-align: center;
+    }
 
     .valuesUser{
     width: 70%;
@@ -197,6 +275,12 @@
         height: 6em;
         font-family:Verdana, Geneva, Tahoma, sans-serif;
         color:#333333;
+        display: flex;
+    }
+
+    .field_name_infouser{
+        margin-left: 2em;
+            width: 80%;
     }
 
     .points_user{
@@ -223,9 +307,7 @@
         font-weight: bold;
     }
 
-    .name_infouser span{
-        margin-left: 2em;
-    }
+    
 
 
 
