@@ -17,7 +17,24 @@ const router = new VueRouter({
     linkActiveClass: 'open active',
     scrollBehavior: () => ({ y: 0 }),
     mode: 'hash'
+    
 });
+
+router.beforeEach((to, from, next) => {
+// redirect to login page if not logged in and trying to access a restricted page
+const publicPages = ['/auth/login'];
+const authRequired = !publicPages.includes(to.path);
+const loggedIn = localStorage.getItem('user');
+
+if (authRequired && !loggedIn) {
+  return next({ 
+    path: '/auth/login', 
+    query: { returnUrl: to.path } 
+  });
+}
+
+next();
+})
 
 new Vue({
   el: '#app',

@@ -2,14 +2,12 @@
   <div id="app">
     <auth-layout v-if="isAuth" ></auth-layout>
       <div class="" v-else>
-    <Header/>
-    <Login/>
-    <InfoUser/>
-    <div class="admin-container">
+        <Header/>
+        <InfoUser/>
+        <div class="admin-container">
         <MenuNav :navItems="nav"/>
         <div id="right-panel" class="right-panel">
-          
-          <div class="content pb-0">
+         <div class="content pb-0">
               <transition enter-active-class="animated fadeIn">
                 <router-view v-if="!isHome"></router-view>
               </transition>
@@ -17,6 +15,7 @@
         </div>
       </div>
       </div>
+       
   </div>
 </template>
 <script>
@@ -25,7 +24,6 @@ import Header from './components/Header.vue'
 import MenuNav from './components/MenuNav.vue'
 //import Sidebar from './components/Sidebar.vue'
 import InfoUser from './components/InfoUser.vue'
-import Login from './components/Login.vue' //'./pages/login/Login.vue'
 import AuthLayout from './layouts/AuthLayout.vue';
 
 export default {
@@ -39,7 +37,6 @@ export default {
     AuthLayout,
     Header,
     InfoUser,
-    Login,
     MenuNav
   },
   computed: {
