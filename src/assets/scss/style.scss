@@ -488,7 +488,9 @@ body.open {
 .right-panel {
     display: table-cell;
     padding-left: 0 !important;
-
+    position: absolute;
+    left: 25%;
+    width: 75%;
     -webkit-transition: all .35s ease;
     -moz-transition: all .35s ease;
     -ms-transition: all .35s ease;

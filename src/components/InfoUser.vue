@@ -25,7 +25,7 @@
                             <span>Copy jr.</span>
                         </div>
 
-                        <div class="btnCardUser"><img src="../images/button_red.png"></div>
+                        <div id="showCardSection" class="btnCardUser" @mousedown="showCardSection"><img src="../images/user-icons-06.png"></div>
 
                         </div>
                         
@@ -48,33 +48,32 @@
                     </section>
                 </div>
                 
-             <!-- <div class="cardcoutain"> 
+             <div id="cardSection" class="cardcoutain"> 
                   <div class="cardContainer">
-                    <div>  
-                        <span class="redtitle">Tarjeta de usuario:</span>
+                    <div class="file1cardInfo">  
+                        <div class="redtitle">Tarjeta de usuario:</div><div id="closeCard" @mousedown="closeCardSection"><img src="../images/closebutton-02.png"></div>
                         </div>
                         <div class="cardinfo">
                             <div class="cardpart1"> 
                                 <img src="../images/carduser-02.png">
-                                <p>Faustino</p>
+                                <div class="titlecard">Faustino</div>
+                                <p>Active</p>
                             </div>
-                            <div> 
                                 <div  class="cardpart2">
-                                    <div class="file1cardInfo">
-                                         <div>name
-                                             <u><p>Faustino Chavez <img src="../images/carduser-04.png"></p></u>
-                                         </div>
+                                         <div class="file1cardInfo"><div class="titlecard">Name:</div><div class="titlecard">ID:</div></div>
+                                         <div class="file1cardInfo">Faustino Chavez <img style="width:8%;" src="../images/carduser-04.png"> 1231423</div>
 
-                                         <div>ID
-                                             <p>1231423</p>
-                                         </div>
-                                    </div>
+                                         <div class="file1cardInfo"><div class="titlecard">Job position:</div><div class="titlecard">Role:</div></div>
+                                         <div class="file1cardInfo"><div><img  style="width:15%;" src="../images/carduser-03.png"> Faustino Chavez</div> 1231423</div>
+
+                                         <div class="file1cardInfo"><div class="titlecard">Email:</div><div class="titlecard">Birthdate:</div></div>
+                                         <div class="file1cardInfo"><div>fgalindo@company.com</div> 12 / 10 / 1988</div>
+                                         
                                 </div>
-                            </div>
 
                         </div>
                   </div>
-              </div> -->     
+              </div>  
         </div>
         
 </template>
@@ -82,11 +81,21 @@
 
 <style>
 
+#closeCard{
+    cursor:pointer;
+}
+
+.titlecard{
+    font-weight: bold;
+}
+
 .cardpart1 {
     width: 30%;
+    text-align: center;
 }
 
 .cardpart2 {
+    width: 60%;
 }
 
 .cardpart1 img{
@@ -120,6 +129,7 @@
         transform: translate(-50%,-50%);
         background-color:#FFF;
         padding: 1vw;
+        border-radius: 1vw;
     }
 
     .cardcoutain{
@@ -130,6 +140,7 @@
         left:0;
         background-color:rgba(0,0,0,0.5);
         z-index: 10;
+        visibility:hidden;
     }
 
     .btnCardUser{
@@ -139,6 +150,7 @@
     float: right;
     position: relative;
     text-align: center;
+    cursor:pointer;
     }
 
     .valuesUser{
@@ -324,9 +336,10 @@
 
 
 <script>
+
+
 import Vue from 'vue';
 import { Donut, Gauge } from 'gaugeJS';
-
 export default{
     name: 'infouser',
     props: {
@@ -344,9 +357,13 @@ export default{
           document.getElementById("data-user-section").classList.toggle('data-userShow');
           document.getElementById("data-user-child").classList.toggle('show-child-data');
           document.getElementById("badge-count").classList.toggle('badge-count-show');
-   
-   
-   }
+   },
+   showCardSection (e){
+       document.getElementById("cardSection").style.visibility = "visible";
+   },
+   closeCardSection (e){
+       document.getElementById("cardSection").style.visibility = "hidden";
+   }  
     },
 mounted () {
           var opts = {

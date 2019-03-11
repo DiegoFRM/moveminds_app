@@ -334,7 +334,9 @@ body.open .navbar .navbar-brand.hidden {
   -moz-transition: all .35s ease;
   -ms-transition: all .35s ease;
   -o-transition: all .35s ease;
-  transition: all .35s ease; }
+  transition: all .35s ease; 
+
+}
 
 .right-panel header.header {
   background: #51547D;
