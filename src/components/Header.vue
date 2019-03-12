@@ -104,16 +104,5 @@
 
 </style>
 
-<script>
-    export default {
-    name: 'basix-header',
-    data (){
 
-    },
-    methods: {
-
-
-      }
-    }
-</script>
 
