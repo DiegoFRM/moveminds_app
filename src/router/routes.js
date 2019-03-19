@@ -2,6 +2,7 @@
 
 // Views
 const Dashboard = resolve => { require.ensure(['../views/Dashboard.vue'], ()=>{ resolve(require('../views/Dashboard.vue')); }); };
+const Cursos = resolve => { require.ensure(['../views/cursos.vue'], ()=>{ resolve(require('../views/cursos.vue')); }); };
 
 // UI Components
 const Buttons = resolve => { require.ensure(['../components/Buttons.vue'], ()=>{ resolve(require('../components/Buttons.vue')); }); };
@@ -49,6 +50,11 @@ export const routes = [
     {   path : '/dashboard',
         components:{
             default: Dashboard
+        }
+    },
+    {   path : '/cursos',
+        components:{
+            default: Cursos
         }
     },
 

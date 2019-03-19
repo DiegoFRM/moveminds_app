@@ -4,6 +4,8 @@ import store from './store'
 import VueRouter from 'vue-router';
 import { routes } from './router/routes';
 import { index } from './components/index';
+import jQuery from 'jQuery'
+window.jQuery = jQuery
 
 // Router
 Vue.use(VueRouter);

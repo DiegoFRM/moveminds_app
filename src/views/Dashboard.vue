@@ -1,27 +1,40 @@
+
 <template>
  <div class="containerMainPage">
-   <section class="header-courses">
-     <div>home <span>Cursos</span></div> <div>Buscador</div>
+   <div class="row">
+    <div class="btn-home col-sm-6 col-md-3">
+      <router-link :to="{path: '/cursos'}">
+      <img src="../images/HOME/COURSE_BTN.png"> 
+      Courses
+      </router-link>
 
-   </section>
-   <section>
-      <div><div>Imagen</div>  <div>Introducción<p>1 módulo</p> </div> </div>
-      <div><div>Imagen</div>  <div>Ventas<p>4 módulos</p> </div> </div>
-      <div><div>Imagen</div>  <div>Personal<p>2 módulo</p> </div> </div>
-   </section>
+     </div>
+    <div class="btn-home col-sm-6 col-md-3"><img src="../images/HOME/INNOVA_BTN.png"> Innovation </div>
+    <div class="btn-home col-sm-6 col-md-3"><img src="../images/HOME/ACHIEVE_BTN.png">Archievements </div>
+    <div class="btn-home col-sm-6 col-md-3"><img src="../images/HOME/GAME_BTN.png"> Games </div>
+   </div>
+   <br>
+   <div class=" row">
+    <div class="btn-home col-sm-6 offset-md-1 col-md-3"><img src="../images/HOME/STORE_BTN.png"> Courses </div>
+    <div class="btn-home col-sm-6 col-md-3"><img src="../images/HOME/SOCIAL_BTN.png"> Social network </div>
+    <div class="btn-home col-sm-6 col-md-3"><img src="../images/HOME/REPORT_BTN.png">Report </div>
+   </div>
 </div> 
 
 </template>
 
-<script>
-
-</script>
-
 <style>
-.header-courses{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.btn-home{
+  text-align: center;
+}
+
+.offset-md-1 {
+      margin-left: 11% !important;
 }
 
 </style>
+
+<script>
+import $ from 'jquery';
+
+</script>
