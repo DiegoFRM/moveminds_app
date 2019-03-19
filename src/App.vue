@@ -5,8 +5,10 @@
         <Header/>
         <InfoUser/>
         <div class="admin-container">
-        <MenuNav :navItems="nav"/>
-        <div id="right-panel" class="right-panel">
+          <transition enter-active-class="animated fadeIn">
+        <MenuNav :navItems="nav"  v-if="isMainPage"/>
+        </transition>
+        <div id="right-panel" class="right-panel" >
          <div class="content pb-0">
               <transition enter-active-class="animated fadeIn">
                 <router-view v-if="!isHome"></router-view>
@@ -25,6 +27,8 @@ import MenuNav from './components/MenuNav.vue'
 //import Sidebar from './components/Sidebar.vue'
 import InfoUser from './components/InfoUser.vue'
 import AuthLayout from './layouts/AuthLayout.vue';
+import $ from 'jquery';
+
 
 export default {
   data () {
@@ -51,6 +55,9 @@ export default {
     },
     isHome (){
       return this.$route.path.match('dashboard')
+    },
+    isMainPage (){
+      return this.$route.path.match('cursos')
     }
 
   }

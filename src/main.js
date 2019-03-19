@@ -7,6 +7,7 @@ import { index } from './components/index';
 import jQuery from 'jQuery'
 window.jQuery = jQuery
 
+
 // Router
 Vue.use(VueRouter);
 const router = new VueRouter({

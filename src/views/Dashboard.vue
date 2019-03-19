@@ -35,6 +35,5 @@
 </style>
 
 <script>
-import $ from 'jquery';
 
 </script>

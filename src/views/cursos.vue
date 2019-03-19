@@ -3,7 +3,7 @@
    <section class="header-courses">
      
      <div id="menuNavCourses">
-       <router-link :to="{path: '/'}">
+       <router-link class="basix-home" :to="{path: '/'}">
        <img src="../images/home.png"> 
        </router-link> 
        <span class="text1">Cursos</span>
@@ -214,7 +214,6 @@ align-items: center;
 
 </style>
 <script>
-import $ from 'jquery';
 
   $(function() {
     //Init states
