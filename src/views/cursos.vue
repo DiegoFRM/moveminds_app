@@ -214,7 +214,28 @@ align-items: center;
 
 </style>
 <script>
+export default {
 
+      methods:{
+
+            myFunctionOnLoad: function() {
+
+            console.log('call on load...');
+            loadActions();
+
+        }
+
+      },
+
+      created: function(){
+
+        this.myFunctionOnLoad()
+
+      }
+
+    }
+
+function loadActions(){
   $(function() {
     //Init states
       $("#slide2").hide();
@@ -246,7 +267,6 @@ align-items: center;
           $("#slide2").hide();
           $("#slide1").show();
       });
-
   });
-
+}
 </script>
