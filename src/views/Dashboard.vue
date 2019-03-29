@@ -1,4 +1,3 @@
-
 <template>
  <div class="containerMainPage">
    <div class="row">

@@ -56,26 +56,7 @@
       </div>
   </div>
   <div id="loadCourse">
-      <video id="slide1" class="objVideo" controls>
-        <source src="" type="video/mp4">
-      </video>
-      <div id="slide2" class="row">
-        <div class="col-sm-6">
-          "Lorem ipsum dolor sit amet, 
-          consectetur adipiscing elit, sed do eiusmod tempor 
-          incididunt ut labore et dolore magna aliqua. Ut enim
-           ad minim veniam, quis nostrud exercitation ullamco 
-           laboris nisi ut aliquip ex ea commodo consequat. 
-           Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident,
-             sunt in culpa qui officia deserunt mollit anim id est
-             laborum."
-        </div>
-         <div class="col-sm-6">
-           <img class="responsive-image" src="../images/CURSOS/link.jpg">
-           </div> 
-      </div>
+      
 
   </div>
   <div id="timeLineCourse">
@@ -129,6 +110,7 @@
 
 .objVideo{
   width: 100%;
+  border-radius: 1vw;
 }
 
 .titleCourse{
@@ -219,8 +201,6 @@ export default {
       methods:{
 
             myFunctionOnLoad: function() {
-
-            console.log('call on load...');
             loadActions();
 
         }
@@ -237,8 +217,12 @@ export default {
 
 function loadActions(){
   $(function() {
+
+$("#loadCourse").load("../courses/demo/index.html");
+
+
     //Init states
-      $("#slide2").hide();
+      //$("#slide2").hide();
       $("#buttonsModules").show();
       $("#courseScorm").hide();
 
