@@ -69,7 +69,60 @@
       <img src="../images/CURSOS/PLACE_UNDONE.png">
     </div>
     </div>
+    <div class="window-finish-eva">
+        <div class="finish-eva1"> 
+          <div class="finish-title">
+            Resultados
+          </div>
+          <div class="close-window">
+            <img src="../images/CURSOS/window_evaluation-04.png">
+          </div>
+        </div>
+        <div class="finish-eva1">
+            <div class="item-avatar-canvas">
+              <img src="../images/CURSOS/window_evaluation-02.png">
+            </div>
 
+            <div class="item-avatar-canvas">
+              <div class="chart-download-courses">
+                <canvas id="download-chart-courses" width="140px" height="140px"></canvas>
+                <span id="gauge-value-courses"> % </span>
+              </div>  
+            </div>
+        </div>
+        <div class="text-info-windowcourse">
+            ¡Evaluación aprovada!
+            <br>Tu calificación obtenida es:
+        </div>
+        <div class="points-windowcourse">
+            100
+        </div>
+        <div class="congratulations-windowcourse">
+            ¡Felicidades!
+        </div>
+        <div  class="finish-eva1">
+            <div>
+                Aciertos: 2/2
+            </div>
+            <div class="corrects-images">
+                <img src="../images/CURSOS/window_evaluation-06.png">
+                <img src="../images/CURSOS/window_evaluation-06.png">
+            </div>
+        </div>
+        <div class="finish-eva2">
+            <div class="coins-badges">
+                <img src="../images/CURSOS/movecoins.png">
+                <span> $3000</span>
+            </div>
+            <div class="coins-badges">
+              <img src="../images/CURSOS/BADGE.png">
+              <span>2</span>
+            </div>
+        </div>
+        <div class="continue-btn">
+            Continuar
+        </div>
+      </div>
 
 </section>
 
@@ -78,11 +131,119 @@
 
 </template>
 
-<script>
-
-</script>
-
 <style>
+
+.corrects-images{
+  width: 60%;
+  border-radius: 2vw;
+  border:2px solid #cccccc;
+  text-align: center;
+}
+
+.continue-btn{
+  position:relative;
+  background-color: #FF5361;
+  width: 50%;
+  text-align: center;
+  left: 50%;
+  color: #FFF;
+  border-radius: 1vw;
+  padding: 0.5vw;
+  transform: translate(-50%,0%);
+}
+
+.coins-badges{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 2vw;
+  border:2px solid #cccccc;
+}
+
+.congratulations-windowcourse{
+  background-image: url("../images/CURSOS/window_evaluation-03.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  color:#FFF;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.points-windowcourse{
+  text-align: center;
+  font-size: 30px;
+  color:#ABC43A;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+
+}
+
+.text-info-windowcourse{
+  text-align: center;
+}
+
+.chart-download-courses{
+
+}
+
+.item-avatar-canvas{
+  width: 50%;
+  text-align: center;
+}
+
+  #gauge-value-courses {
+      color: #000 !important;
+      text-anchor: middle;
+      font-family: Arial;
+      font-size: 29px;
+      font-weight: bold;
+      fill-opacity: 1;
+      position: absolute;
+      left: 45%;
+      top: 38%;
+      display:none;
+  }
+
+  #gauge-value-courses:after{
+    content: "%";
+  }
+
+
+.finish-title{
+  color:#FF5361;
+  font-weight: bold;
+}
+
+.finish-eva2{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1vw;
+}
+
+.finish-eva1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw;
+}
+
+.window-finish-eva{
+    background-color:#FFF;
+    position:fixed;
+    width:30%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 1vw;
+    border:2px solid #CCCCCC;
+    padding: 1vw;
+}
+
 
 #launchScorm{
   cursor: pointer;
@@ -196,6 +357,9 @@ align-items: center;
 
 </style>
 <script>
+
+import Vue from 'vue';
+import { Donut, Gauge } from 'gaugeJS';
 export default {
 
       methods:{
@@ -211,7 +375,33 @@ export default {
 
         this.myFunctionOnLoad()
 
-      }
+      },
+mounted () {
+          var opts = {
+            lines: 14,
+            angle: 0.5,
+            lineWidth: 0.15,
+            limitMax: 'false', 
+            percentColors: [ [1, "#ff0000"]],
+            strokeColor: '#ffa726',
+            generateGradient: false,
+            highDpiSupport: false,
+
+
+            colorStart: '#ABC43A',
+            colorStop: '#2DB2B1', 
+            strokeColor: '#e6e9ec',
+            generateGradient: true
+          };
+          var target = document.getElementById('download-chart-courses');
+          var gauge = new Donut(target).setOptions(opts);
+          gauge.maxValue = 100;
+          gauge.animationSpeed = 40;
+          gauge.set(90);
+          
+          gauge.setTextField(document.getElementById("gauge-value-courses"));
+
+   }    
 
     }
 
